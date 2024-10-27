@@ -760,7 +760,7 @@
         <section class="hero container">
             <h1 class="hero-title-primary">GetYourMVP.com</h1>
             <p class="hero-title-sub">Helps you to get your MVP ready in just 3 Days</p>
-            <button>Consult for Free</button>
+            <button id="consultButton">Consult for Free</button>
         </section>
         <div class="hero-image">
             <figure>
@@ -854,7 +854,7 @@
                     <li class="features">Basic SEO Support</li>
                     <li class="features last-feat">1 Week Tech Support</li>
                     <li>
-                        <button class="pricing-button">Choose Self</button>
+                        <button class="pricing-button" id="selfButton">Choose Self</button>
                     </li>
                 </ul>
             </div>
@@ -867,7 +867,7 @@
                     <li class="features">Advanced SEO Support</li>
                     <li class="features">1 Month Tech Support</li>
                     <li>
-                        <button class="pricing-button">Choose Pro</button>
+                        <button class="pricing-button" id="proButton">Choose Pro</button>
                     </li>
                 </ul>
             </div>
@@ -885,7 +885,7 @@
                     <li class="features">Funding Support</li>
                     <li class="features">Investors Database</li>
                     <li>
-                        <button class="pricing-button">Choose Custom</button>
+                        <button class="pricing-button" id="customButton">Choose Custom</button>
                     </li>
                 </ul>
             </div>
@@ -907,6 +907,28 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script>
+        function openWhatsApp(plan) {
+            const phoneNumber = '919997555586';
+            const message = encodeURIComponent(`Hello, I am interested in the ${plan} plan for building my MVP.`);
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+
+        document.getElementById('consultButton').addEventListener('click', function() {
+            openWhatsApp('consultation');
+        });
+
+        document.getElementById('selfButton').addEventListener('click', function() {
+            openWhatsApp('Self');
+        });
+
+        document.getElementById('proButton').addEventListener('click', function() {
+            openWhatsApp('Pro');
+        });
+
+        document.getElementById('customButton').addEventListener('click', function() {
+            openWhatsApp('Custom');
+        });
+
         // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCrDl9TKr2m_lDSCQcqGHmr5GcrNdcFmY8",
