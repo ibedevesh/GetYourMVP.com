@@ -751,7 +751,7 @@
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li><a href="#features" class="nav-link">Solutions</a></li>
-                <a class="highlight" href="#contact">Contact Us</a>
+                <a class="highlight" id="contactUs" href="#">Contact Us</a>
             </ul>
         </nav>
     </header>
@@ -785,10 +785,10 @@
 
     <section class="video-content">
         <div class="video-story">
-            <h1 class="video-title">See in Action</h1>
+            <h1 class="video-title">Our Projects</h1>
             <p class="video-subtitle">Gimble</p>
             <div class='embed-container'>
-                <iframe id="video" src="https://www.youtube-nocookie.com/embed/ne6p6MfLBxc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="video" src="https://www.youtube.com/watch?v=_-gggxB2fYM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="three-dots">
@@ -963,6 +963,14 @@
                 console.error("Error adding document: ", error);
                 alert('An error occurred. Please try again.');
             });
+        });
+
+        document.getElementById('contactUs').addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = 'deveshdv760@gmail.com';
+            const subject = encodeURIComponent('Contact from GetYourMVP.com');
+            const body = encodeURIComponent('Hello, I would like to get in touch regarding your MVP services.');
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
         });
     </script>
 </body>
